@@ -120,6 +120,10 @@ members.forEach(member => console.log(`멤버: ${member}`));
 const found = members.find(member => member === '레이');
 console.log(found); // 레이
 
+//fineIndex() -> Returns the index of the first element that satisfies the condition
+const foundIndex = members.findIndex(member => member === '레이');
+console.log(foundIndex); // 1
+
 // some() -> Checks if any elements pass the test
 const hasMember = members.some(member => member === '가을');
 console.log(hasMember); // true

@@ -45,3 +45,5 @@ class IdolModel2 {
         );
     }
 }
+
+const yuJin2 = new IdolModel2('안유진', 2003);

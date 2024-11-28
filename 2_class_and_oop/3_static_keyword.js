@@ -26,7 +26,7 @@ console.log(IdolModel.groupName);
 console.log(IdolModel.returnGroupName());
 
 /**
- * factory pattern
+ * factory constructor
  */
 
 class IdolModel2 {
@@ -38,12 +38,35 @@ class IdolModel2 {
         this.year = year;
     }
 
-    static fromObject(object){
+    // Object factory
+    static fromObject(object) {
         return new IdolModel2(
             object.name,
-            object.year
+            object.year,
+        );
+    }
+
+    // List factory
+    static fromList(list) {
+        return new IdolModel2(
+            list[0],
+            list[1],
         );
     }
 }
 
-const yuJin2 = new IdolModel2('안유진', 2003);
+const yuJin2 = IdolModel2.fromObject({
+    name: '안유진',
+    year: 2003,
+});
+
+console.log(yuJin2);
+
+const wonYoung = IdolModel2.fromList(
+    [
+        '장원영',
+        2004,
+    ]
+);
+
+console.log(wonYoung);
